@@ -6,6 +6,9 @@ import mysql from "mysql2/promise"; // pool 및 db 사용 시 필요한 import �
 import { handleUserSignUp } from "./controllers/user.controller.js";
 import { handleStoreUpload } from "./controllers/store.controller.js";
 import { handleReviewUpload } from "./controllers/review.controller.js";
+import { handleMissionUpload } from "./controllers/mission.controller.js";
+
+
 
 
 
@@ -42,7 +45,8 @@ app.post("/api/v1/users/signup", handleUserSignUp);
 app.post("/api/regions/:region_id/stores", handleStoreUpload);
 // 3 - review uploding for store api
 app.post("/api/v1/reviews", handleReviewUpload);
-
+// 4 - mission uploading for store's mission api
+app.post("/api/v1/missions", handleMissionUpload);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);

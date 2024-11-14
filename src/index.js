@@ -7,6 +7,7 @@ import { handleUserSignUp } from "./controllers/user.controller.js";
 import { handleStoreUpload } from "./controllers/store.controller.js";
 import { handleReviewUpload } from "./controllers/review.controller.js";
 import { handleMissionUpload } from "./controllers/mission.controller.js";
+import { handleUserMissionUpload } from "./controllers/user_mission.controller.js";
 
 
 
@@ -47,6 +48,13 @@ app.post("/api/regions/:region_id/stores", handleStoreUpload);
 app.post("/api/v1/reviews", handleReviewUpload);
 // 4 - mission uploading for store's mission api
 app.post("/api/v1/missions", handleMissionUpload);
+
+//5 - user_mission uploading for user_mission api
+app.post("/api/v1/user-missions", handleUserMissionUpload);
+
+
+
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
